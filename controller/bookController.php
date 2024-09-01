@@ -56,7 +56,6 @@ function updateBook($id, $input) {
     $db = new Database();
     $pdo = $db->getConnection();
 
-    // Kitabın var olup olmadığını kontrol et
     $stmt = $pdo->prepare("SELECT * FROM books WHERE id = ?");
     $stmt->execute([$id]);
     $existingBook = $stmt->fetch();
@@ -96,11 +95,10 @@ function updateBook($id, $input) {
         return;
     }
 
-    // Dinamik SQL sorgusunu oluştur
+    // Dynamix SQL Query
     $sql = "UPDATE books SET " . implode(', ', $updateFields) . " WHERE id = ?";
     $params[] = $id;
 
-    // SQL sorgusunu çalıştır
     try {
         $stmt = $pdo->prepare($sql);
         $stmt->execute($params);
