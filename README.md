@@ -23,8 +23,10 @@ git clone https://github.com/BCincioglu/bookshelf-api.git
 
 Terminalden uygulamanın olduğu dosyaya erişin ve gerekli paketleri yükleyin:
 
+```sh
 cd bookshelf-api
 composer install
+```
 
 ### 3. Veritabanı Yapılandırma
 
@@ -36,6 +38,7 @@ CREATE DATABASE bookshelf;
 
 MySQL'de oluşturduğunuz veritabanında ‘books’ tablosunu oluşturun:
 
+```sh
 CREATE TABLE books (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -44,7 +47,7 @@ CREATE TABLE books (
     price DECIMAL(10, 2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+```
 ### 5. API Anahtarı
 
 .env dosyasındaki API_KEY alanını doldurun.
@@ -57,8 +60,9 @@ Bilgisayarınızda Nginx'in yüklü olduğundan ve çalıştığından emin olun
 
 Aşağıdaki kodu terminalinize yapıştırarak uygulamayı çalıştırın:
 
+```sh
 php -S localhost:8000
-
+```
 
 
 
